@@ -25,11 +25,11 @@ We evaluated five classifiers against a majority-vote baseline: **Decision Tree,
 
 ### Results*
 All applied models significantly outperformed the baseline **macro F1-score**. Furthermore, **feature importances** were evaluated across all models.
-![F1 Macro Score, all models](results\03_evaluation_roc_curves.png "Figure 1: F1 Macro Scores")    
+![F1 Macro Score, all models](results/03_evaluation_roc_curves.svg "Figure 1: F1 Macro Scores")    
 **Figure 1:** F1 Macro Scores
 
 
-![Feature Importance scores across models](results\03_evaluation_feature_importance.svg "Figure 2: Feature Importance scores across models")    
+![Feature Importance scores across models](results/03_evaluation_feature_importance.svg "Figure 2: Feature Importance scores across models")    
 **Figure 2:** Feature Importance scores across models
 
 *The brief overview of the methods and results above highlights the project's main findings to provide context. This should not be misunderstood as solely my work, as my main contributions were focused on the preprocessing pipeline.
