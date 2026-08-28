@@ -25,7 +25,7 @@ We evaluated five classifiers against a majority-vote baseline: **Decision Tree,
 
 ### Results*
 All applied models significantly outperformed the baseline **macro F1-score**. Furthermore, **feature importances** were evaluated across all models.
-![F1 Macro Score, all models](results\03_evaluation_roc_curves.svg "Figure 1: F1 Macro Scores")    
+![F1 Macro Score, all models](results\03_evaluation_roc_curves.png "Figure 1: F1 Macro Scores")    
 **Figure 1:** F1 Macro Scores
 
 
