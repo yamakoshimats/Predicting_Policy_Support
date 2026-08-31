@@ -1,40 +1,7 @@
 # Predicting Policy Support 
-This repository contains a **group project** for a **Data Mining university course**. We predicted support for climate change regulations based on religious beliefs, political attitudes, and socio-demographic variables. The analysis utilizes the Religious Landscape Study 2023-24 by the Pew Research Center, comprising a representative sample of 36,908 U.S. adults. My primary contributions focused on constructing a robust **preprocessing pipeline** and managing **hierarchical survey structures**, **straightlining**, the **stratified train-test split** and **class imbalance**.
+This repository contains a **group project** for a **Data Mining university course**. We predicted support for climate change regulations based on religious beliefs, political attitudes, and socio-demographic variables. The analysis utilizes the Religious Landscape Study 2023-24 by the Pew Research Center, comprising a representative sample of U.S. adults. My primary contributions focused on constructing a robust **preprocessing pipeline** and managing **hierarchical survey structures**, **straightlining**, the **stratified train-test split** and **class imbalance**.
 
-## Table of Contents
-- [Project Description](#project-description)
-- [Project Structure](#project-structure)
-- [Installation and Usage Instructions](#installation-and-usage-instructions)
-- [Technologies used](#technologies-used)
-- [Requirements](#requirements)
-- [Project Status](#project-status)
-
-## Project Description
-### Topic:
-In light of the increasing importance of climate change in political debates, we used multiple classifiers to implement a predictive model of climate change regulation support. The goal was to provide insights into the most important driving features among U.S. adults.
-
-### Dataset:
-The data used was provided by the **Pew Research Center** in the context of the **Religious Landscape Study 2023-24**. The dataset includes a representative sample of 36,908 adults and variables about religion and socioeconomic background, while excluding geographic information and several sensitive variables. The variable of interest, QB2C, measured pro- or anti-climate change regulation attitudes.
-
-### Preprocessing
-Among our biggest challenges was the construction of a logical preprocessing pipeline that prevents data leakage and allows for adjustment depending on the model (e.g., normalization, feature selection). In addition to planning the pipeline, I addressed the challenges of **hierarchical survey structures** by recoding the variables into their parent variables where possible (see 02_preprocessing.ipynb, chapters 1 & 2) and **straightlining** by identifying mutually exclusive questions and removing participants accordingly (see 02_preprocessing.ipynb, chapter 4). Furthermore, I took responsibility for the **train-test split using stratified sampling** (see 02_preprocessing.ipynb, chapter 7) and addressed **class imbalance using random oversampling** (see 03_modeling.ipynb, chapter 0.3).
-
-### Methods*
-We evaluated five classifiers against a majority-vote baseline: **Decision Tree, Random Forest, XGBoost, Logistic Regression, and SVC**. Features were scaled appropriately, and highly correlated features were removed using Spearman correlation. **Hyperparameter optimization** was achieved using 10-fold cross-validation and random search.
-
-
-### Results*
-All applied models significantly outperformed the baseline **macro F1-score**. Furthermore, **feature importances** were evaluated across all models.
-![F1 Macro Score, all models](results/03_evaluation_roc_curves.svg "Figure 1: F1 Macro Scores")    
-**Figure 1:** F1 Macro Scores
-
-
-![Feature Importance scores across models](results/03_evaluation_feature_importance.svg "Figure 2: Feature Importance scores across models")    
-**Figure 2:** Feature Importance scores across models
-
-*The brief overview of the methods and results above highlights the project's main findings to provide context. This should not be misunderstood as solely my work, as my main contributions were focused on the preprocessing pipeline.
-
-## Project Structure
+This repository is structured as follows:
 ```
 Predicting_Policy_Support/
 │
@@ -47,11 +14,56 @@ Predicting_Policy_Support/
 │   ├── 02_preprocessing.ipynb    # For cleaning, encoding, feature engineering
 │   └── 03_modeling.ipynb         # For ML models & evaluation
 │
-├── results/          # Summary of steps, results and plots
+├── results/          
+│   ├── 01_exploration_summary.md      # Summary of data exploration
+│   ├── 02_preprocessing_summary.md    # Summary of preprocessing
+│   └── 03_modeling_summary.md         # Summary of modeling results
+│
 ├── requirements.txt  # all Python dependencies for setting up the environment
+├── LICENSE
 └── README.md
-
 ```
+
+## Table of Contents
+- [Project Description](#project-description)
+- [Installation and Usage Instructions](#installation-and-usage-instructions)
+- [Technologies used](#technologies-used)
+- [Requirements](#requirements)
+- [Project Status](#project-status)
+
+## Project Description
+### Topic:
+In light of the increasing importance of climate change in political debates, we used multiple classifiers to implement a predictive model of climate change regulation support. The goal was to provide insights into the most important driving features among U.S. adults.
+
+### Dataset:
+The data used was provided by the **Pew Research Center** in the context of the **Religious Landscape Study 2023-24**. The dataset includes a representative sample of 36,908 adults and variables about religion and socioeconomic background, while excluding geographic information and several sensitive variables. The variable of interest, **QB2C**, measured pro- or anti-climate change regulation attitudes.
+
+### Preprocessing:
+Among our biggest challenges was the construction of a logical preprocessing pipeline that prevents data leakage and allows for adjustment depending on the model (e.g., normalization, feature selection). In addition to planning the pipeline, I addressed the **hierarchical survey structures** by recoding the variables into their parent variables where possible (see 02_preprocessing.ipynb, chapters 1 & 2) and **straightlining** by identifying mutually exclusive questions and removing participants accordingly (see 02_preprocessing.ipynb, chapter 4). Furthermore, I took responsibility for the **train-test split using stratified sampling** (see 02_preprocessing.ipynb, chapter 7) and **class imbalance using random oversampling** (see 03_modeling.ipynb, chapter 0.3).
+
+### Methods*:
+We evaluated five classifiers against a majority-vote baseline: **Decision Tree, Random Forest, XGBoost, Logistic Regression, and SVC**. Features were scaled appropriately, and highly correlated features were removed using Spearman correlation. **Hyperparameter optimization** was achieved using 10-fold cross-validation and random search.
+
+
+### Results*:
+All models significantly outperformed the baseline **macro F1-score**. Furthermore, **feature importances** were evaluated across all models.
+
+<figure>
+  <img src="results/03_evaluation_roc_curves.svg" width="500" />
+  <figcaption><strong>Figure 1:</strong> F1 Macro Scores</figcaption>
+</figure>
+
+<br />
+<br />
+
+<figure>
+  <img src="results/03_evaluation_feature_importance.svg" width="900" />
+  <figcaption><strong>Figure 2:</strong> Feature Importance Scores Across Models</figcaption>
+</figure>
+
+<br />
+<br />
+*The brief overview of the methods and results above highlights the project's main findings to provide context. This should not be misunderstood as my work, as my main contributions were in the preprocessing pipeline.
 
 ## Installation and Usage Instructions
 
@@ -95,7 +107,7 @@ Key packages:
 - `jupyter` — notebooks
 
 
-## Requirements:
+## Requirements
 See `requirements.txt`. 
 
 
